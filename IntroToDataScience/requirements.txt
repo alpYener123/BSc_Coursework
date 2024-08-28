@@ -1,0 +1,9 @@
+requests
+pydantic
+numpy
+pandas
+seaborn
+matplotlib
+statsmodels
+selenium
+webdriver_manager
