@@ -1,0 +1,316 @@
+class FrontierStack {
+private:
+    struct Frontier_Node{
+        T* which_cell; // the represented cell of the node
+        Frontier_Node* below_node; // the node beneath us on the stack
+
+        Frontier_Node(T* cell) : which_cell(cell), below_node(nullptr){}
+    };
+
+    Frontier_Node* top_node;
+    int size;
+
+public:
+    FrontierStack(T*);
+    FrontierStack();
+    void AddNode(T*);
+    T* Pop();
+    T* TopElement();
+    bool isEmpty();
+    int howManyNodes();
+    bool checkNode(int x, int y);
+    vector<vector<unsigned int>> print_path();
+
+    // destructor
+    // isEmpty
+
+
+    void tester_printer();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * bool trial = false;
+
+
+        for (int i = 0; i < result.size(); i++) {
+            cout << result[i]->x_coord << "  " << result[i]->y_coord << endl;
+        }
+
+    if (trial){
+
+        // Add the first cell to the frontier
+    Cell *initial_cell = new Cell(0, 0);
+    FrontierStack stack = FrontierStack();
+    stack.AddNode(initial_cell);
+
+
+
+   /*
+    Cell * newcell = new Cell(1,0);
+    stack.AddNode(newcell);
+    Cell * newcellw = new Cell(0,1);
+    closed.push_back(newcellw);
+    stack.AddNode(initial_cell);
+
+
+
+    while (!stack.isEmpty()){
+        Cell * current_node = stack.TopElement();
+        bool right=false, left=false, up=false, down=false;
+        int x = current_node->x_coord; int y = current_node->y_coord;
+
+        // check right:
+        if (x+1 < N){
+            Cell * dummy_cell = new Cell(x+1, y);
+            if (!isCellVisited(stack, closed, dummy_cell)){
+                right=true;
+            }
+        }
+
+        // check left:
+        if (x-1 > -1){
+            Cell * dummy_cell = new Cell(x-1, y);
+            if (!isCellVisited(stack, closed, dummy_cell)){
+                left=true;
+            }
+        }
+
+        // check up:
+        if (y+1 < M){
+            Cell * dummy_cell = new Cell(x, y+1);
+            if (!isCellVisited(stack, closed, dummy_cell)){
+                up=true;
+            }
+
+        }
+
+        // check down:
+        if (y-1 > -1){
+            Cell * dummy_cell = new Cell(x, y-1);
+            if (!isCellVisited(stack, closed, dummy_cell)){
+                down=true;
+            }
+        }
+
+        if (!right && !left && !up && !down){
+            Cell* closed_cell = stack.Pop();
+            closed.push_back(closed_cell);
+        }
+        else{
+            string direction = pick_random_direction(right, left, up, down);
+
+            if (direction == "right"){
+                int new_x = x+1; int new_y = y;
+                Cell * new_cell = new Cell(new_x,new_y);
+                current_node->right = new_cell;
+                new_cell->left = current_node;
+                stack.AddNode(new_cell);
+            }
+            else if (direction == "left"){
+                int new_x = x-1; int new_y = y;
+                Cell * new_cell = new Cell(new_x,new_y);
+                current_node->left = new_cell;
+                new_cell->right = current_node;
+                stack.AddNode(new_cell);
+            }
+            else if (direction == "up"){
+                int new_x = x; int new_y = y+1;
+                Cell * new_cell = new Cell(new_x,new_y);
+                current_node->up = new_cell;
+                new_cell->down = current_node;
+                stack.AddNode(new_cell);
+            }
+            else if (direction == "down"){
+                int new_x = x; int new_y = y-1;
+                Cell * new_cell = new Cell(new_x,new_y);
+                current_node->down = new_cell;
+                new_cell->up = current_node;
+                stack.AddNode(new_cell);
+            }
+            else{cout << "ERROR: Not a valid direction"; return 12;}
+        }
+
+    }
+
+        FrontierStack lalo = FrontierStack();
+        lalo.tester_printer();
+        Cell* xcc = lalo.Pop();
+        Cell* aa = new Cell(12, 24);
+        lalo.AddNode(aa);
+        lalo.tester_printer();
+        Cell* bb = lalo.Pop();
+        lalo.tester_printer();
+        cout << endl << endl << endl;
+        Cell* cella = new Cell(12, 24); FrontierStack stacksd = FrontierStack(cella);
+
+        cout << stacksd.isEmpty() << endl;
+        cout << stacksd.TopElement()->x_coord << endl;
+
+        Cell* poap = stack.Pop();
+
+        cout << stacksd.isEmpty() << endl;
+        cout << stacksd.TopElement()->x_coord << endl;
+
+
+
+
+        cout << "OLDDDDDDDDDD";
+        Cell* cell = new Cell(12, 24); FrontierStack stack = FrontierStack(cell);
+        Cell* cell2 = new Cell(123, 24); stack.AddNode(cell2);
+        Cell* cell3 = new Cell(32, 24); stack.AddNode(cell3);
+        Cell* cell4 = new Cell(12, 24); stack.AddNode(cell4);
+        Cell* cell5 = new Cell(213, 24); stack.AddNode(cell5);
+
+        Cell* pop = stack.Pop();
+        cout << pop->x_coord << endl;
+        pop = stack.Pop();
+        cout << pop->x_coord << endl;
+        pop = stack.Pop();
+        cout << pop->x_coord << endl;
+        stack.tester_printer();
+
+        cell2->up = cell3;
+
+        cout << cell2->up->x_coord;
+        cout << cell3->x_coord;
+
+
+        cout << endl << stack.TopElement()->x_coord << "finito";
+
+
+        /*
+bool checkStack(FrontierStack stack, int x, int y){
+    int num_of_elements = stack.howManyNodes();
+    cout << endl << num_of_elements;
+    for (int i=0;i<num_of_elements;i++){
+        Cell* current_cell = stack.Pop();
+        if (current_cell->x_coord == x && current_cell->y_coord == y){return true;}
+    }
+    return false;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// Created by alpye on 3/11/2024.
+//
+/*
+#include "Frontier.h"
+
+
+// Constructor
+template<typename T>
+FrontierStack::FrontierStack() {
+    top_node = nullptr;
+}
+
+// DO NOT FORGET TO DELETE STUFF AS WELL WHEN NEEDED
+
+template<typename T>
+void FrontierStack::AddNode(T* cell) {
+    if (isEmpty()){
+        Frontier_Node* new_element = new Frontier_Node(cell);
+        new_element->below_node = nullptr;
+        top_node = new_element;
+        size++;
+        return;
+    }
+
+    Frontier_Node* new_element = new Frontier_Node(cell);
+    new_element->below_node = top_node;
+    top_node = new_element;
+    size++;
+}
+
+template<typename T>
+T* FrontierStack::Pop() {
+
+    if (isEmpty()){
+        cout << "Was already empty" << endl;
+        return nullptr;
+    }
+    Frontier_Node* deleted_node = top_node;
+    T* cell_popped = top_node->which_item;
+    top_node = top_node->below_node;
+    delete deleted_node;
+    size--;
+    return cell_popped;
+}
+
+template<typename T>
+T* FrontierStack::TopElement() {
+    return top_node->which_item;
+}
+
+template<typename T>
+bool FrontierStack::isEmpty() {
+    if (top_node == nullptr){return true;}
+    return false;
+}
+
+template<typename T>
+int FrontierStack::howManyNodes() {
+    return size;
+}
+
+template<typename T>
+bool FrontierStack::checkNode(int x, int y) {
+    Frontier_Node* dummy = top_node;
+    while (dummy != nullptr){
+        T* current_cell = dummy->which_item;
+        if (current_cell->x_coord == x && current_cell->y_coord == y){return true;}
+        dummy = dummy->below_node;
+    }
+    return false;
+
+}
+
+template<typename T>
+vector<vector<unsigned int>> FrontierStack::print_path() {
+    vector<vector<unsigned int>> path_to_goal;
+    Frontier_Node* top = top_node;
+    while (top != nullptr){
+        vector<unsigned int> push = {top->which_item->x_coord, top->which_item->y_coord};
+        path_to_goal.push_back(push);
+        top = top->below_node;
+    }
+
+    return path_to_goal;
+}
+
+template<typename T>
+void FrontierStack::tester_printer() {
+    Frontier_Node* current_node = top_node;
+    while (current_node != nullptr){
+        cout << current_node->which_item->x_coord << " " << current_node->which_item->y_coord << endl;
+        current_node = current_node->below_node;
+    }
+}
+
+ */
+

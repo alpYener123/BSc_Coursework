@@ -1,0 +1,4 @@
+C:\coding\CLION\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/coding/CLION/bin/ninja/win/x64/ninja.exe -G Ninja -S C:\Users\alpye\OneDrive\Desktop\CS300\hw2\hw2_double_check -B C:\Users\alpye\OneDrive\Desktop\CS300\hw2\hw2_double_check\cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/alpye/OneDrive/Desktop/CS300/hw2/hw2_double_check/cmake-build-debug
